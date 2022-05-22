@@ -30,7 +30,7 @@ func StringSum(input string) (output string, err error) {
 	wraErr := func(err error) (string, error) {
 		return "", fmt.Errorf("an error occurred:%w", err)
 	}
-	input = strings.TrimSpace(input)
+	input = strings.ReplaceAll(input, " ", "")
 	if len(input) == 0 {
 
 		return wraErr(errorEmptyInput)
